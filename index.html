@@ -1,194 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16712550344">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the best place to find unique and personalized gifts for any occasion.">
+    <meta name="keywords" content="gifts, unique gifts, personalized gifts, birthday gifts, anniversary gifts">
+    <meta name="author" content="Your Gift Shop Name">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Gift Shop Name - Unique Gifts for Every Occasion</title>
 
-  gtag('config', 'AW-16712550344');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apple Customer Support Landing Page">
-  <title>Apple Customer Support</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      position: relative; /* To position banners */
-    }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    /* Banner styles */
-    .banner {
-      background-color: #007aff; /* Blue color for the banner */
-      color: white;
-      padding: 15px;
-      text-align: center;
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: 1000; /* Ensures banners are on top of other content */
-      cursor: pointer; /* Make banners clickable */
-    }
+    <!-- Stylesheet -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
 
-    .banner.top {
-      top: 0;
-    }
+        header {
+            background-color: #ff6347; /* A warm color representing gifts and celebrations */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    .banner.middle {
-      top: 50%;
-      transform: translateY(-50%);
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
 
-    .banner.bottom {
-      bottom: 0;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e55342;
+            padding: 10px 0;
+        }
 
-    .close-banner {
-      background-color: transparent;
-      color: white;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      position: absolute;
-      right: 10px;
-      top: 5px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
 
-    .center-content {
-      text-align: center;
-      padding: 150px 20px; /* Adjusted padding to avoid overlap with banners */
-    }
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-    h1 {
-      color: #333;
-    }
+        h2 {
+            color: #333;
+            font-size: 2em;
+        }
 
-    p {
-      color: #666;
-      font-size: 18px;
-    }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
 
-    .call-button {
-      background-color: #007aff;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 20px;
-      text-decoration: none;
-    }
+        .cta-button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
 
-    .call-button:hover {
-      background-color: #005bb5;
-    }
+        .cta-button:hover {
+            background-color: #e55342;
+        }
 
-    /* Modal Styles */
-    .modal {
-      display: none; /* Initially hidden */
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
+        footer {
+            background-color: #f4f4f4;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
 
-    .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-      width: 300px;
-      position: relative;
-    }
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 18px;
-      background-color: transparent;
-      color: #333;
-      border: none;
-      cursor: pointer;
-    }
+        .contact-info, .privacy {
+            margin: 10px 0;
+        }
 
-    .close-btn:hover {
-      color: #007aff;
-    }
-  </style>
+        /* Responsive Design */
+        @media only screen and (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            .main-content {
+                padding: 30px 15px;
+            }
+        }
+    </style>
 </head>
-<body onclick="callNow()">
+<body>
 
-  <!-- Top Banner -->
-  <div class="banner top" id="bannerTop" onclick="callNow()">
-    <button class="close-banner" onclick="closeBanner('bannerTop', event)">×</button>
-    <strong>Toll-Free Support Available: +1 (888) 481-6264</strong>
-  </div>
+    <!-- Header -->
+    <header>
+        <h1>Your Gift Shop Name</h1>
+        <p>The best gifts for every occasion</p>
+    </header>
 
-  <div class="center-content">
-    <h1>Apple Customer Support</h1>
-    <p>Need help with your Apple device? Call us now for support!</p>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#gifts">Gift Categories</a>
+        <a href="#specials">Special Offers</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <!-- Middle Banner -->
-    <div class="banner middle" id="bannerMiddle" onclick="callNow()">
-      <button class="close-banner" onclick="closeBanner('bannerMiddle', event)">×</button>
-      <strong>24/7 Customer Support: +1 (888) 481-6264</strong>
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h2>Find the Perfect Gift for Any Occasion</h2>
+        <p>Whether you're celebrating a birthday, anniversary, or holiday, we have unique and personalized gifts to make your moments unforgettable. Explore our wide range of gifts that are perfect for your loved ones.</p>
+        
+        <h3>Our Popular Gift Categories:</h3>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>🎂 Birthday Gifts</li>
+            <li>💍 Anniversary Gifts</li>
+            <li>🎁 Personalized Gifts</li>
+            <li>🧸 Gifts for Kids</li>
+            <li>🎄 Holiday Gifts</li>
+        </ul>
+
+        <p>Sign up today and get exclusive discounts and early access to our holiday sales!</p>
+        <button class="cta-button" onclick="window.location.href='#contact'">Get Started Now</button>
     </div>
 
-    <!-- Button to trigger the pop-up -->
-    <button class="call-button" onclick="callNow()">Call Now</button>
-  </div>
-
-  <!-- Bottom Banner -->
-  <div class="banner bottom" id="bannerBottom" onclick="callNow()">
-    <button class="close-banner" onclick="closeBanner('bannerBottom', event)">×</button>
-    <strong>Reach Us Anytime: +1 (888) 481-6264</strong>
-  </div>
-
-  <!-- Modal (Pop-Up) -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <!-- Close button in the top right corner -->
-      <button class="close-btn" onclick="closePopup()">×</button>
-      <p>Call Now: <a href="tel:+18884816264">+1 (888) 481-6264</a></p>
-    </div>
-  </div>
-
-  <!-- JavaScript functions -->
-  <script>
-    // Function to display the pop-up
-    function showPopup() {
-      document.getElementById('myModal').style.display = 'flex';
-    }
-
-    // Function to close the pop-up
-    function closePopup() {
-      document.getElementById('myModal').style.display = 'none';
-    }
-
-    // Function to close the banner and prevent the call from triggering
-    function closeBanner(bannerId, event) {
-      event.stopPropagation();  // Prevent triggering the call when closing the banner
-      document.getElementById(bannerId).style.display = 'none';
-    }
-
-    // Function to make a call
-    function callNow() {
-      window.location.href = 'tel:+18884816264';
-    }
-  </script>
+    <!-- Footer -->
+    <footer>
+        <p class="contact-info">Need help? Contact us at <a href="tel:+18001234567">+1 (800) 123-4567</a></p>
+        <p class="privacy"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>© 2024 Your Gift Shop Name. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
